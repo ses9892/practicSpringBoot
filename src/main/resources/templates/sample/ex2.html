@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .target{
+            background-color: deeppink;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+<!--        <li th:each="dto : ${list}">-->
+<!--            [[${dto}]]-->
+<!--        </li>-->
+            state.count = start(1) ~ ... end<br>
+            state.index = start(0) ~ ... end <br>
+        <li th:each="dto,state : ${list}">
+            [[${state.count}]] -- [[${dto}]]
+        </li>
+    </ul>
+
+<hr>
+    <h3>th:if</h3>
+    <ul>
+        <li th:each="dto,state:${list}">
+            <span  th:if="${dto.sno % 5 ==0}" th:text="${'------------------'+dto.sno}"></span>
+            <span  th:unless="${dto.sno % 5 ==0}" th:text="${dto.first}"></span>
+        </li>
+    </ul>
+    <hr>
+    <h3>th:if 삼항연산자</h3>
+    <ul>
+        <li th:each="dto,state:${list}" th:text="${dto.sno % 5 ==0}?'--------'+${dto.sno}:${dto.first}">
+        </li>
+    </ul>
+    <hr>
+    <h3>th:if 삼항연산자 (CSS)</h3>
+    <ul>
+        <li th:each="dto,state:${list}" th:text="${dto}" th:class="${dto.sno % 5==0}?target">
+        </li>
+    </ul>
+</body>
+</html>
