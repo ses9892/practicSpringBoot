@@ -44,7 +44,7 @@
 - #### th:fragment
     - Layout을 나누고 각페이지에서 공통으로 사용되는 레이아웃을 파라미터로 넘길수 있다.
     
-    #####[sideBar](https://github.com/ses9892/practicSpringBoot/blob/master/src/main/resources/templates/layout/basic.html)
-    #####[exTemplate](https://github.com/ses9892/practicSpringBoot/blob/master/src/main/resources/templates/sample/exTemplate.html)
+    ##### [sideBar](https://github.com/ses9892/practicSpringBoot/blob/master/src/main/resources/templates/layout/basic.html)
+    ##### [exTemplate](https://github.com/ses9892/practicSpringBoot/blob/master/src/main/resources/templates/sample/exTemplate.html)
      
    
