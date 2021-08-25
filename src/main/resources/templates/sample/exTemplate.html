@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--/layout/layout1의 setContent로 대체한다. 태그는 setContent이고
+layout1의 태그 content를  ~(현재페이지) = this 의 태그인 content로 대체한다.-->
+    <th:block th:replace="~{/layout/layout1 :: setContent(~{this::content} )}">
+        <th:block th:fragment="content">
+            <h1>exTemplate page</h1>
+        </th:block>
+    </th:block>

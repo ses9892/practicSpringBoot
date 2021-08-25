@@ -5,15 +5,17 @@
     <title>Title</title>
 </head>
 <body>
-    <h1 th:text="${result}"></h1>
-    <h1 th:text="${list}"></h1>
-    <hr size="5">
     <ul>
-        <th:block th:each="dto:${list}">
-            <li th:text="${dto.sno %5==0}?${dto.sno}:${dto.first}"></li>
-        </th:block>
+        <li th:each="dto:${list}">
+            <a th:href="@{/sample/exView(sno=${dto.sno})}">[[${dto}]]</a>
+        </li>
     </ul>
-
+    <hr>
+    <ul>
+        <li th:each="dto:${list}">
+            [[${#numbers.formatInteger(dto.sno,5)}]]
+        </li>
+    </ul>
 
 </body>
 <script th:inline="javascript">
